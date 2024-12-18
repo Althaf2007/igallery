@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header  class="h1">
+        <nav>
+            <ul>
+                <li ><a href="#INTERACTIVE IMAGE GALLERY" class="heading">INTERACTIVE IMAGE GALLERY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="gallery">
+        <div class="gallery-container">
+            <img src="Black panther.webp" alt="Image 1""height="200" width="300">
+            <img src="Thor.webp" alt="Image 2""height="200" width="300">
+            <img src="Spider man.webp" alt="Image 3""height="200" width="300">
+            <img src="Captain america.webp" alt="Image 4""height="200" width="300">
+            <img src="Iron man.webp" alt="Image 5""height="200" width="300">
+            <img src="Hulk.webp" alt="Image 6""height="200" width="300">
+            <img src="Ant man.webp" alt="Image 7""height="200" width="300">
+            <img src="Doctor Strange.webp" alt="Image 8""height="200" width="300">
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            © DESIGNED BY: K.MOHAMED ALTHAF</p>
+    </footer>
+    <script>
+        const allPhotos = document.querySelectorAll('.gallery');
+        const viewer = document.querySelector('.viewer');
+        const viewerImage = viewer.querySelector('gallery');
+        const closeBtn = viewer.querySelector('.close-btn');
+    
+        allPhotos.forEach((img) => {
+            img.addEventListener('click', function() {
+                viewer.style.display = 'flex';
+                viewerImage.src = this.src;
+            });
+        });
+    
+        closeBtn.addEventListener('click', (gallery) => {
+            viewer.style.display = 'none';
+        });
+    
+        viewer.addEventListener('click', (gallery) => {
+            if (e.target === viewer) {
+                viewer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
